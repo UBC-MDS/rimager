@@ -44,6 +44,6 @@ devtools::install_github("UBC-MDS/rimager")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(rimager)
+#library(rimager)
 ## basic example code
 ```
