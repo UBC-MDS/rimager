@@ -2,7 +2,7 @@
 #'
 #' A new image with the modified width and height will be created
 #'
-#' @param input_file, character
+#' @param input_file character
 #' @param output_file character
 #'
 #' @return an array of image
