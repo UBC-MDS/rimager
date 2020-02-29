@@ -91,5 +91,5 @@ This is a basic example which shows you how to solve a common problem:
 
 ## Package in python
 
-We have package with same functionalities in python `pyimager`. See
+We have the package with same functionalities in python: `pyimager`. See
 [here](https://github.com/UBC-MDS/rimager)
