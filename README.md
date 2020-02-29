@@ -88,3 +88,8 @@ This is a basic example which shows you how to solve a common problem:
 ## basic example code
 ## TODO
 ```
+
+## Package in python
+
+We have a package with the same functionalities in python: `pyimager`.
+See [here](https://github.com/UBC-MDS/pyimager)
