@@ -49,4 +49,5 @@ reduce_dimensions <- function(input_file, ouput_file, width, height) {
   
 }
 
+# just for test, will be deleted later
 dim(reduce_dimensions("mandrill.jpg", "images/reduced.jpg", 297, 200))
