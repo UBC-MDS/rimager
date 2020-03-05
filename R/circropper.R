@@ -4,8 +4,8 @@ library(magick)
 #'
 #' Create a new image cropped by a circle mask and leave a margin
 #'
-#' @param input_path character
-#' @param outut_path character
+#' @param input_path character the image file path
+#' @param outut_path character the saved image path
 #' @param margin double
 #'
 #' @return an image file saved in the designated folder
@@ -29,4 +29,3 @@ circropper <- function(input_path, output_path, margin) {
   img_out <- image_composite(mask, img, "plus")
   image_write(img_out, path = output_path, format = "png")
 }
-
