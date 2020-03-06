@@ -45,9 +45,8 @@ reduce_dimensions <- function(input_file, ouput_file, width, height) {
     new_img[, , i] = img[, , i][remov_rows, remov_cols]
   }
   
-  writeJPEG(new_img, target = ouput_file)
+  jpeg::writeJPEG(new_img, target = ouput_file)
   return(new_img)
   
   
 }
-
