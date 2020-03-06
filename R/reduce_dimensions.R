@@ -9,5 +9,5 @@
 #' @export
 #' @examples
 #' reduce_dimensions(input_file,output_file,width,height)
-reduce_dimensions <- function((input_file,output_file,width,height) {
+reduce_dimensions <- function(input_file,output_file,width,height) {
 }
