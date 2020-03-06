@@ -13,7 +13,7 @@
 library("jpeg")
 library(testthat)
 reduce_dimensions <- function(input_file, ouput_file, width, height) {
-  img <- readJPEG(input_file)
+  img <- jpeg::readJPEG(input_file)
   
   nrows = nrow(img)
   
@@ -50,5 +50,4 @@ reduce_dimensions <- function(input_file, ouput_file, width, height) {
   
   
 }
-
 
