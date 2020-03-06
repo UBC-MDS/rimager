@@ -10,8 +10,6 @@
 #' @export
 #' @examples reduce_dimensions("images/mandrill.jpg", "images/reduced.jpg", 297, 200)
 #' reduce_dimensions(input_file,output_file,width,height)
-library("jpeg")
-library(testthat)
 reduce_dimensions <- function(input_file, ouput_file, width, height) {
   img <- jpeg::readJPEG(input_file)
   
