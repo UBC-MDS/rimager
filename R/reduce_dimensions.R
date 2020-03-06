@@ -8,9 +8,10 @@
 #' @param height integer, the height of the reduce image
 #' @return an array of image
 #' @export
-#' @examples reduce_dimensions("mandrill.jpg", "new_image.jpg", 297, 200)
+#' @examples reduce_dimensions("images/mandrill.jpg", "images/reduced.jpg", 297, 200)
 #' reduce_dimensions(input_file,output_file,width,height)
 library("jpeg")
+library(testthat)
 reduce_dimensions <- function(input_file, ouput_file, width, height) {
   img <- readJPEG(input_file)
   
@@ -47,7 +48,7 @@ reduce_dimensions <- function(input_file, ouput_file, width, height) {
   writeJPEG(new_img, target = ouput_file)
   return(new_img)
   
+  
 }
 
-# just for test, will be deleted later
-dim(reduce_dimensions("mandrill.jpg", "images/reduced.jpg", 297, 200))
+

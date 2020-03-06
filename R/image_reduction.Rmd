@@ -1,0 +1,68 @@
+---
+title: "Untitled"
+author: "Mohammed"
+date: "2/26/2020"
+output: html_document
+---
+
+
+
+
+```{r }
+library(OpenImageR)
+library("jpeg")
+library("jpeg")
+jj <- readJPEG("new_image.jpg")
+plot(0:1,0:1,type="n",ann=FALSE,axes=FALSE)
+rasterImage(jj,0,0,1,1)
+```
+
+
+```{r }
+reduce_dimensions <- function(input_file,ouput_file=None,width,height) { 
+  img <- readJPEG(input_file)
+  
+  nrows = nrow(img);
+  ncols = ncol(img);
+
+  rem_rows = (nrows - width)%% 2
+  rem_cols = (ncols - height)%% 2
+
+    if((width %% 2) == 0) {
+    remov_rows = ((nrows/2) - ( width/2)+1): ((nrows/2) + ( width/2))
+    
+    } else {
+    remov_rows = trunc(((nrows/2) - ( width/2)+1)): trunc(((nrows/2) +( width/2)))
+    }
+  
+    if((height %% 2) == 0) {
+    remov_cols = ((ncols/2) - (height/2)+1): ((ncols/2) + (height/2))
+    
+    } else {
+    remov_cols = trunc(((ncols/2)) - (height/2)+1): trunc(((ncols/2)) + (height/2))
+    }
+  
+  new_img = array(dim = c(width, height, dim(img)[3]))
+  
+  for (i in 1:dim(img)[3]) {
+  new_img[,, i] = img[,, i][remov_rows, remov_cols]
+  }
+ # r2 <- writePNG(new_img)
+  #image.out.path <- "new_image.png"
+  writeJPEG(new_img, target = "../images/new_image.jpg")
+  return(new_img)
+
+}
+dim(reduce_dimensions("../mandrill.jpg",ouput_file=None, 200, 200))
+```
+
+```{r}
+
+new_img = reduce_dimensions("../mandrill.jpg", 110, 201)
+plot(0:1,0:1,type="n",ann=FALSE,axes=FALSE)
+rasterImage(new_img,0,0,1,1)
+
+```
+
+
+
