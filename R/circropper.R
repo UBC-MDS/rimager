@@ -5,28 +5,20 @@ library(magick)
 #' Create a new image cropped by a circle mask and leave a margin
 #'
 #' @param input_path character the image file path
-#' @param outut_path character the saved image path
 #' @param margin double the distance between circle boundary and the original image boundary
 #'
 #' @return a cropped image
 #' @export
+#'
 #' @examples
 #' circropper("path_to_input_img.png", "output_img.png", 20)
 
-circropper <- function(input_path, output_path, margin) {
+circropper <- function(input_path, margin) {
   # Check argument type
-  if (!is.character(input_path) & !is.character(output_path) & !is.double(margin)){
-    stop("TypeError: Both 'input_path' and 'output_path' arguments must be characters and the 'margin' argument must be a double")}
-  if (!is.character(input_path) & !is.character(output_path)){
-    stop("TypeError: Both 'input_path' and 'output_path' arguments must be characters")}
   if (!is.character(input_path) & !is.double(margin)){
-    stop("TypeError: The 'input_path' argument must be a character and the 'margin' argument must be a double")}
-  if (!is.character(output_path) & !is.double(margin)){
-    stop("TypeError: The 'output_path' argument must be a character and the 'margin' argument must be a double")}
+    stop("TypeError: The 'input_path' arguments must be a character and the 'margin' argument must be a double")}
   if (!is.character(input_path)){
     stop("TypeError: The 'input_path' argument must be a character")}
-  if (!is.character(output_path)){
-    stop("TypeError: The 'output_path' argument must be a character")}
   if (!is.double(margin)){
     stop("TypeError: The 'margin' argument must be a double")}
 
@@ -47,7 +39,6 @@ circropper <- function(input_path, output_path, margin) {
 
   mask <- image_read(tf)
   img_out <- image_composite(mask, img, "plus")
-  image_write(img_out, path = output_path, format = "png")
 
   return(img_out)
 }
