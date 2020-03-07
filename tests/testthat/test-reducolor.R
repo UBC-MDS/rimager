@@ -18,3 +18,7 @@ test_that("Expect eight colors, more or less are returned", {
 test_that("Error should be raised. Should not allow style code input other than 0 or 1", {
   expect_error(reducolor(2, "../mandrill.jpg"))
 })
+
+test_that("Error should be raised for non-existant image files", {
+  expect_error(reducolor(0, "../wrong.jpg"))
+})
