@@ -2,5 +2,5 @@
 
 export(circropper)
 export(img_filter)
-export(redu_color)
 export(reduce_dimensions)
+export(reducolor)

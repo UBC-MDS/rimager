@@ -4,19 +4,19 @@
 \alias{circropper}
 \title{Crop the image to a circle}
 \usage{
-circropper(x)
+circropper(input_path, margin)
 }
 \arguments{
-\item{input_path}{character}
+\item{input_path}{character the image file path}
 
-\item{outut_path}{character}
+\item{margin}{double the distance between circle boundary and the original image boundary}
 }
 \value{
-an array of image
+a cropped image
 }
 \description{
-Create a new image array cropped by a circle mask
+Create a new image cropped by a circle mask and leave a margin
 }
 \examples{
-circropper("path_to_input_img.png", "output_img.png")
+\dontrun{circropper("bear.jpg", 20)}
 }
