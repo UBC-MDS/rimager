@@ -39,52 +39,55 @@ img_filter <- function(input_path, filter_type, strength, output_path=NULL) {
 
   if (filter_type=='blur') {
     # create blur filter
-    filt = array(data = 1/(as.integer(h*strength/10)*as.integer(w*strength/10)),
+    filt <- array(data = 1/(as.integer(h*strength/10)*as.integer(w*strength/10)),
                            dim = c(as.integer(h*strength/10), as.integer(w*strength/10)))
   } else {
       # create sharpen filter
-      filt = array(c(0,0,0,0,1,0,0,0,0), dim=c(3,3))
+      filt <- array(c(0,0,0,0,1,0,0,0,0), dim=c(3,3))
   }
 
   # get coordinates for the middle of the filter
-  filt_h = dim(filt)[1]
-  filt_w = dim(filt)[2]
-  offset_w = filt_w%/%2
-  offset_h = filt_h%/%2
+  filt_h <- dim(filt)[1]
+  filt_w <- dim(filt)[2]
+  offset_w <- filt_w%/%2
+  offset_h <- filt_h%/%2
 
   # Compute convolution with kernel/filter
-  for (columns in seq(from=offset_w, to=w-offset_w)){
-    for (rows in seq(from=offset_h, to=h-offset_h)){
+  for (columns in seq(from=offset_w+1, to=w-offset_w)){
+    for (rows in seq(from=offset_h+1, to=h-offset_h)){
 
-      new_rgb = array(c(0,0,0), dim=c(1,3))
+      new_rgb <- array(c(0,0,0), dim=c(1,3))
 
       for (x in seq(filt_h)){
         for (y in seq(filt_w)){
 
           # get coords for current filter position
-          x_new <- columns + x - offset_h
-          y_new <- rows + y - offset_w
+          x_new <- columns + x - offset_h - 1
+          y_new <- rows + y - offset_w - 1
 
           # multiply pixel rgb by filter value
           pixel_rgb <- img[x_new, y_new,]
           new_rgb <- new_rgb + pixel_rgb * filt[x, y]
         }
       }
-    }
-    if (filter_type=='blur') {
-      output_img[columns, rows,]  <- new_rgb
-    } else {
-      output_img[columns, rows,] <- img[columns, rows,] + (img[columns, rows,] - new_rgb)*strength
-    }
+
+      if (filter_type=='blur') {
+        output_image[columns, rows,]  <- new_rgb
+      } else {
+        output_image[columns, rows,] <- img[columns, rows,] + (img[columns, rows,] - new_rgb)*strength
+    }}
   }
   # crop image to remove boundary pixels
-  output_img = output_img[offset_h:h-offset_h,offset_w:w-offset_w,]
+  output_image <- OpenImageR::cropImage(output_image,
+                                       new_width = offset_w+1:w-offset_w,
+                                       new_height = offset_h+1:h-offset_h,
+                                       type = 'user_defined')
 
   if (!is.null(output_path)) {
-    writeImage(output_img, output_path)
+    writeImage(output_image, output_path)
     paste("New image saved in", output_path)
   }
-  return(output_img)
+  return(output_image)
 
 }
 
