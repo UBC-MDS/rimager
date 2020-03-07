@@ -1,3 +1,5 @@
+##Unit test for reducolor function
+
 test_that("Expect two colors only, more or less are returned", {
   expect_equal(length(unique(as.vector(reducolor(0, "../milad.jpg")))), 2)
   expect_equal(length(unique(as.vector(reducolor(0, "../mandrill.jpg")))), 2)
