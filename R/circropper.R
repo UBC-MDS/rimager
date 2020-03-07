@@ -11,7 +11,7 @@ library(magick)
 #' @export
 #'
 #' @examples
-#' circropper("path_to_input_img.png", "output_img.png", 20)
+#' \dontrun{circropper("bear.jpg", 20)}
 
 circropper <- function(input_path, margin) {
   # Check argument type
@@ -22,7 +22,7 @@ circropper <- function(input_path, margin) {
   if (!is.double(margin)){
     stop("TypeError: The 'margin' argument must be a double")}
 
-  img <- image_read(input_path)
+  img <- image_read(input_path, strip = TRUE)
   height <- image_info(img)$height
   width <- image_info(img)$width
 
