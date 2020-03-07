@@ -84,7 +84,7 @@ img_filter <- function(input_path, filter_type, strength, output_path=NULL) {
                                        type = 'user_defined')
 
   if (!is.null(output_path)) {
-    writeImage(output_image, output_path)
+    OpenImageR::writeImage(output_image, output_path)
     paste("New image saved in", output_path)
   }
   return(output_image)
