@@ -47,6 +47,7 @@ circropper <- function(input_path, output_path, margin) {
 
   mask <- image_read(tf)
   img_out <- image_composite(mask, img, "plus")
+  image_write(img_out, path = output_path, format = "png")
 
   return(img_out)
 }
