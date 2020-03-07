@@ -9,26 +9,26 @@
 #' @param filter_type character filter to be applied to the input image
 #'                    options: 'blur' and 'sharpen'
 #' @param strength numeric or integer (0 to 1) the strength of the selected filter effect
-#' @param output_path character or None; the file path of the resultant image
+#' @param output_path character or NULL (default NULL); the file path of the resultant image
 #'
 #' @return modified image array
 #' @export
 #'
 #' @examples
-#' img_filter("images/milad.jpg", "blur", 0.4)
+#' img_filter("images/mandrill.jpg", "blur", 0.4)
 img_filter <- function(input_path, filter_type, strength, output_path=NULL) {
 
   # assert strength is of type integer or numeric
-  if (is.integer(strength)==FALSE & is.numeric(strength)==FALSE) {
-    stop("Input must be of type integer or numeric for the strength argument.")
+  if (!is.integer(strength) & !is.numeric(strength)) {
+    stop("TypeError: Input must be of type integer or numeric for the strength argument.")
   }
   # assert strength is between 0 and 1
   if (strength > 1 | strength < 0) {
-    stop("The 'strength' parameter can only take on values from 0 to 1")
+    stop("ValueError: The 'strength' parameter can only take on values from 0 to 1")
   }
   # assert filter_type is one of the valid options
   if (filter_type!= 'blur' & filter_type!= 'sharpen') {
-    stop("The fliter_type entered is not a valid option.")
+    stop("ValueError: The fliter_type entered is not a valid option.")
   }
 
   # read in image as array
@@ -39,7 +39,7 @@ img_filter <- function(input_path, filter_type, strength, output_path=NULL) {
 
   if (filter_type=='blur') {
     # create blur filter
-    filt = array(data = 1/(as.integer(h*strength/10)*as.integer(w*strength/10),
+    filt = array(data = 1/(as.integer(h*strength/10)*as.integer(w*strength/10)),
                            dim = c(as.integer(h*strength/10), as.integer(w*strength/10)))
   } else {
       # create sharpen filter
@@ -55,7 +55,8 @@ img_filter <- function(input_path, filter_type, strength, output_path=NULL) {
   # Compute convolution with kernel/filter
   for (columns in seq(from=offset_w, to=w-offset_w)){
     for (rows in seq(from=offset_h, to=h-offset_h)){
-      new_rgb = [0, 0, 0]
+
+      new_rgb = array(c(0,0,0), dim=c(1,3))
 
       for (x in seq(filt_h)){
         for (y in seq(filt_w)){
@@ -65,18 +66,19 @@ img_filter <- function(input_path, filter_type, strength, output_path=NULL) {
           y_new <- rows + y - offset_w
 
           # multiply pixel rgb by filter value
-          pixel_rgb <- img[x_new, y_new]
-          new_rgb += pixel_rgb * filt[x, y]
+          pixel_rgb <- img[x_new, y_new,]
+          new_rgb <- new_rgb + pixel_rgb * filt[x, y]
         }
       }
-    } if (filter_type=='blur') {
-        output_img[columns, rows]  = new_rgb
+    }
+    if (filter_type=='blur') {
+      output_img[columns, rows,]  <- new_rgb
     } else {
-      output_img[columns, rows] = img[columns, rows] + (img[columns, rows] - new_rgb)*strength
+      output_img[columns, rows,] <- img[columns, rows,] + (img[columns, rows,] - new_rgb)*strength
     }
   }
   # crop image to remove boundary pixels
-  output_img = output_img[offset_h:h-offset_h,offset_w:w-offset_w,:]
+  output_img = output_img[offset_h:h-offset_h,offset_w:w-offset_w,]
 
   if (!is.null(output_path)) {
     writeImage(output_img, output_path)
