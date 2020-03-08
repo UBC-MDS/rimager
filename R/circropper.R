@@ -11,7 +11,7 @@ library(magick)
 #' @export
 #'
 #' @examples
-#' \dontrun{circropper("bear.jpg", 20)}
+#' circropper("tests/milad.jpg", 20)}
 
 circropper <- function(input_path, margin) {
   # Check argument type
