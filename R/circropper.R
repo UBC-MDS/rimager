@@ -10,6 +10,7 @@ library(magick)
 #' @return a cropped image
 #' @export
 #'
+#'
 #' @examples
 #' circropper("tests/milad.jpg", 20)}
 
