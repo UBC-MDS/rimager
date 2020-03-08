@@ -2,6 +2,6 @@
 
 export(circropper)
 export(img_filter)
-export(reducolor)
 export(reduce_dimensions)
+export(reducolor)
 
