@@ -25,26 +25,27 @@ reduce_dimensions <- function(input_file, ouput_file, width, height) {
     remov_rows = ((nrows / 2) - (width / 2) + 1):((nrows / 2) + (width / 2))
     
   } else {
-    remov_rows = trunc(((nrows / 2) - (width / 2) + 1)):trunc(((nrows / 2) +
+    remov_rows = floor(((nrows / 2) - (width / 2) + 1)):trunc(((nrows / 2) +
                                                                  (width / 2)))
   }
-  
   if ((height %% 2) == 0) {
     remov_cols = ((ncols / 2) - (height / 2) + 1):((ncols / 2) + (height / 2))
     
   } else {
-    remov_cols = trunc(((ncols / 2)) - (height / 2) + 1):trunc(((ncols / 2)) + (height /
+    remov_cols = floor(((ncols / 2)) - (height / 2) + 1):trunc(((ncols / 2)) + (height /
                                                                                   2))
   }
   
   new_img = array(dim = c(width, height, dim(img)[3]))
+  
+  
   
   for (i in 1:dim(img)[3]) {
     new_img[, , i] = img[, , i][remov_rows, remov_cols]
   }
   
   jpeg::writeJPEG(new_img, target = ouput_file)
-  return(new_img)
+  return(dim(new_img))
   
   
 }
