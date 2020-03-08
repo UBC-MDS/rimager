@@ -1,4 +1,4 @@
-#' Reduce image color to either 2 or 8 colors for cartoonized effect
+#` Reduce image color to either 2 or 8 colors for cartoonized effect
 #'
 #' @param style integer either 0 or 1
 #'              0 for white and black colors
