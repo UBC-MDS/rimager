@@ -4,7 +4,7 @@ library(devtools)#' Reduce image color to either 2 or 8 colors for cartoonized e
 #'              0 for white and black colors
 #'              1 for 8 colors
 #' @param input_path character the image file path
-#' @param output_path character if not None, the modified image will be saved
+#' @param output_path character if not Null, the modified image will be saved
 #'                    in the provided folder path and name
 #'
 #' @return modified image array
