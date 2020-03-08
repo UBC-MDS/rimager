@@ -12,7 +12,7 @@ test_that("yield error when margin value is out of scope", {
 })
 
 
-test_that("circropper works good", {
+test_that("circropper produces an output image with the same height and width as the original image", {
   img <- image_read(input_path)
   height <- image_info(img)$height
   width <- image_info(img)$width

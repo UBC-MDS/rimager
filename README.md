@@ -72,13 +72,16 @@ devtools::install_github("UBC-MDS/rimager")
   - `img_filter`: This function applies a filter to a given image,
     altering the visual aesthetic. This includes options to blur,
     emboss, and colorize the image.
-  - `reducolor`: This function reduces number of colors appearing on the
-    image to have cartoonized color effect.
+  - `reducolor`: This function reduces the image colors to get the cartoonized color effect. This can be either white and black images or eight colors images.  
 
 ## Dependencies:
 
-TODO
-
+  - R 3.6.1 or greater
+    - magick
+    - plotrix
+    - jpeg
+    - OpenImageR
+    
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
