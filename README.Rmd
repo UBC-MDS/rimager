@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # rimager
 
 <!-- badges: start -->
+[![R build status](https://github.com/UBC-MDS/rimager/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rimager/actions)
 <!-- badges: end -->
 
 The rimager package contains functions that aid in image manipulation and processing.

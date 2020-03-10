@@ -12,7 +12,10 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    covr
 RoxygenNote: 7.0.2
 Imports: 
     OpenImageR
+URL: https://github.com/UBC-MDS/rimager
+BugReports: https://github.com/UBC-MDS/rimager/issues

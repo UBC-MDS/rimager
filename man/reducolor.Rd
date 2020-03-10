@@ -13,7 +13,7 @@ reducolor(style, input_path, output_path = NULL)
 
 \item{input_path}{character the image file path}
 
-\item{output_path}{character if not None, the modified image will be saved
+\item{output_path}{character if not Null, the modified image will be saved
 in the provided folder path and name}
 }
 \value{
