@@ -17,6 +17,3 @@ a cropped image
 \description{
 Create a new image cropped by a circle mask and leave a margin
 }
-\examples{
-\dontrun{circropper("bear.jpg", 20)}
-}
