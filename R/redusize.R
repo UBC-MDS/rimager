@@ -8,14 +8,20 @@
 #' @param height integer, the height of the reduce image
 #' @return an array of image
 #' @export
-#' @examples reduce_dimensions("images/mandrill.jpg", "images/reduced.jpg", 297, 200)
+#' @examples redusize("images/mandrill.jpg", "images/reduced.jpg", 297, 200)
 #' reduce_dimensions(input_file,output_file,width,height)
-reduce_dimensions <- function(input_file, ouput_file, width, height) {
+redusize <- function(input_file, ouput_file, width, height) {
   img <- jpeg::readJPEG(input_file)
   
   nrows = nrow(img)
-  
   ncols = ncol(img)
+
+
+  # added exception
+  if (height > ncols) {stop("Value Error: Width should be less than the original width")}
+  if (width > nrows) {stop("Value Error: Height should be less than the original height")}
+
+
   
   
   rem_rows = (nrows - width) %% 2
@@ -49,3 +55,4 @@ reduce_dimensions <- function(input_file, ouput_file, width, height) {
   
   
 }
+
