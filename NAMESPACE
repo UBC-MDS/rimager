@@ -4,4 +4,3 @@ export(circropper)
 export(img_filter)
 export(reduce_dimensions)
 export(reducolor)
-
