@@ -80,16 +80,20 @@ devtools::install_github("UBC-MDS/rimager")
 
 ## Dependencies:
 
-TODO
+  - R 3.6.1 or greater
+      - magick
+      - plotrix
+      - jpeg
+      - OpenImageR
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-#library(rimager)
+library(rimager)
 ## basic example code
-## TODO
+redusize("images/mandrill.jpg", "images/reduced.jpg", 297, 200)
 ```
 
 ## Package in python
