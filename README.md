@@ -84,7 +84,7 @@ devtools::install_github("UBC-MDS/rimager")
 
 ## Example
 
-see [Vinette](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html)  
+see [rimager-Vinette](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html)  
 
 ## Package in python
 
