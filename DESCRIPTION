@@ -14,7 +14,8 @@ LazyData: true
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 RoxygenNote: 7.0.2
 Imports: 
     OpenImageR,
@@ -22,3 +23,5 @@ Imports:
     jpeg,
     plotrix
 VignetteBuilder: knitr
+URL: https://github.com/UBC-MDS/rimager
+BugReports: https://github.com/UBC-MDS/rimager/issues
