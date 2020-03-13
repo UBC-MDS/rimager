@@ -17,6 +17,6 @@ test_that("Output image should be smaller or equal in size to original image arr
   output_img2 <- img_filter('../mandrill.jpg', filter_type='sharpen', strength = 0.1)
   expect_lte(h, dim(output_img)[1])
   expect_lte(w, dim(output_img)[2])
-  expect_equal(h, dim(output_img2)[1])
-  expect_equal(w, dim(output_img2)[2])
+  expect_equal(h - 2, dim(output_img2)[1])
+  expect_equal(w - 2, dim(output_img2)[2])
 })
