@@ -4,21 +4,16 @@
 \alias{circropper}
 \title{Crop the image to a circle}
 \usage{
-circropper(input_path, output_path, margin)
+circropper(input_path, margin)
 }
 \arguments{
 \item{input_path}{character the image file path}
 
-\item{margin}{double}
-
-\item{outut_path}{character the saved image path}
+\item{margin}{double the distance between circle boundary and the original image boundary}
 }
 \value{
-an image file saved in the designated folder
+a cropped image
 }
 \description{
 Create a new image cropped by a circle mask and leave a margin
-}
-\examples{
-circropper("path_to_input_img.png", "output_img.png", 20)
 }
