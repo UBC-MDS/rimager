@@ -7,6 +7,7 @@
 
 [![R build status](https://github.com/UBC-MDS/rimager/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rimager/action)
 [![codecov](https://codecov.io/gh/UBC-MDS/rimager/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rimager)
+
 <!-- badges: end -->
 
 The rimager package contains functions that aid in image manipulation
@@ -51,14 +52,7 @@ by one line of code.
 
 ## Installation
 
-You can install the released version of rimager from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("rimager")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -90,13 +84,7 @@ devtools::install_github("UBC-MDS/rimager")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(rimager)
-## basic example code
-redusize("images/mandrill.jpg", "images/reduced.jpg", 297, 200)
-```
+see [rimager-Vinette](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html)  
 
 ## Package in python
 

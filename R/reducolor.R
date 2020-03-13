@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-#' redu_color(0, "tests/milad.jpg", "tests/milad_new.jpg")
+#' reducolor(0, "tests/milad.jpg", "tests/milad_new.jpg")
 reducolor <- function(style, input_path, output_path=NULL) {
   img = OpenImageR::readImage(input_path)
   height <- dim(img)[1]
