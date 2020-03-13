@@ -79,8 +79,8 @@ img_filter <- function(input_path, filter_type, strength, output_path=NULL) {
   }
   # crop image to remove boundary pixels
   output_image <- OpenImageR::cropImage(output_image,
-                                       new_width = offset_w+1:w-offset_w,
-                                       new_height = offset_h+1:h-offset_h,
+                                       new_width = (offset_w+1):(w-offset_w),
+                                       new_height = (offset_h+1):(h-offset_h),
                                        type = 'user_defined')
 
   if (!is.null(output_path)) {

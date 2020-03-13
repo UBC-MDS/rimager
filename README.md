@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![R build status](https://github.com/UBC-MDS/rimager/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rimager/action)
+[![codecov](https://codecov.io/gh/UBC-MDS/rimager/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rimager)
 <!-- badges: end -->
 
 The rimager package contains functions that aid in image manipulation
