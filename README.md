@@ -89,66 +89,10 @@ devtools::install_github("UBC-MDS/rimager")
       - jpeg
       - OpenImageR
 
-## Usage examples
+## Example
 
-We will use `mandrill.jpg` saved in the images folder of this repository
-for the examples.
-
-``` r
-library(OpenImageR)
-library(rimager)
-library(magick)
-#> Linking to ImageMagick 6.9.9.39
-#> Enabled features: cairo, fontconfig, freetype, lcms, pango, rsvg, webp
-#> Disabled features: fftw, ghostscript, x11
-library(jpeg)
-```
-
-## `circropper`
-
-``` r
-circropper("images/mandrill.jpg", 0)
-```
-
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
-
-## `redusize`
-
-``` r
-mandrill_redusize <- redusize("images/mandrill.jpg", "images/mandrill_redusize.jpg", 297, 200)
-imageShow(mandrill_redusize)
-```
-
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
-
-## `imgfilter`
-
-``` r
-mandrill_imgfilter <- imgfilter("images/mandrill.jpg", "blur", 0.4)
-imageShow(mandrill_imgfilter)
-```
-
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
-
-## `reducolor`
-
-``` r
-#style 0, reduce the image color to white and black and save the new image mandrill_reducolor0.jpg in
-#the images folder
-mandrill_reducolor0 <- reducolor(0, "images/mandrill.jpg", "images/mandrill_reducolor0.jpg")
-imageShow(mandrill_reducolor0)
-```
-
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
-
-``` r
-#style 1, reduce the image color to 8 colors. And because the output_path is NULL, the image will
-#not be saved as a file.
-mandrill_reducolor1 <- reducolor(1, input_path = "images/mandrill.jpg", output_path = NULL)
-imageShow(mandrill_reducolor1)
-```
-
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+see
+[rimager-Vinette](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html)
 
 ## Package in python
 
