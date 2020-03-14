@@ -3,7 +3,7 @@ title: "rimager-vignette"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{rimager-vignette}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{knitr::knitr}
   %\VignetteEncoding{UTF-8}
 ---
 

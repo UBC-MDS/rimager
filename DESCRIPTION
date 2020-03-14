@@ -25,7 +25,6 @@ Imports:
     jpeg,
     plotrix,
     stats
-    
 VignetteBuilder: knitr
 URL: https://github.com/UBC-MDS/rimager
 BugReports: https://github.com/UBC-MDS/rimager/issues

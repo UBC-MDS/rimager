@@ -23,7 +23,7 @@ modified image array
 Reduce image color to either 2 or 8 colors for cartoonized effect
 }
 \examples{
-input_path = system.file("tmp_image", "mandrill.jpg", package = "rimager")
+input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
 new <- reducolor(0, input_path, "new.jpg")
 OpenImageR::imageShow(new)
 }

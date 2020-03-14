@@ -22,6 +22,6 @@ an array of image
 A new image with the modified width and height will be created
 }
 \examples{
-input_path = system.file("tmp_image", "mandrill.jpg", package = "rimager")
+input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
 new <- redusize(input_path, "reduced.jpg", 297, 200)
 }
