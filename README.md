@@ -36,7 +36,7 @@ simple image processing and graphic editing. Based on the main needs of
 graphic editing, the package integrates four functionalities. The
 functionalities include: reducing the size of an image, cropping an
 image into a circle, reducing the number of colours in an image, and
-applying cool filter effects. By inputing the path of the image, users
+applying cool filter effects. By inputting the path of the image, users
 can run any of these functions with one line of code to get the desired
 image.
 
@@ -85,7 +85,7 @@ devtools::install_github("UBC-MDS/rimager")
       - OpenImageR
 
 <span style="color:red"> Note: Because some operating systems
-(Ubuntu-16.04 ‘3.2’, ‘3.3’ ‘3.4’ and mocOs-devel) need older version of
+(Ubuntu-16.04 ‘3.2’, ‘3.3’ ‘3.4’ and macOs-devel) need older version of
 packages (magick and plotrix) we used in development, we exclude the
 these OS in R-CMD-check. We got permission on slack.</span>
 

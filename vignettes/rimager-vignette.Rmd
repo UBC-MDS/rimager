@@ -23,7 +23,7 @@ library(rimager)
 
 # Overview
 
-[`rimager`](https://github.com/UBC-MDS/rimager) is a R package that provides a quick and easy way to do image processings and graphic editings. The package includes four functionalities: reduce the size of the image, crop the image into a circle, reduce the image colors, and blur or sharpen the image. 
+[`rimager`](https://github.com/UBC-MDS/rimager) is a R package that provides a quick and easy way to perform image processing and graphic editing. The package includes four functionalities: reduce the size of the image, crop the image into a circle, reduce the image colors, and blur or sharpen the image. 
 
 
 # Functions
@@ -53,7 +53,7 @@ A new image with the modified width and height will be created
 ## `imgfilter(input_path, filter_type, strength, output_path = NULL)`
 
 #### Description: 
-The filter types include 'blur' and 'sharpen'; where blur blends neighboring pixels and sharpen enhances edges. The strength of the filter indicates how much of effect is apllied to the image; where 0 is no effect and 1 is very strong effect.
+The filter types include 'blur' and 'sharpen'; where blur blends neighboring pixels and sharpen enhances edges. The strength of the filter indicates how much of effect is applied to the image; where 0 is no effect and 1 is very strong effect.
 
 #### Arguments:
 
