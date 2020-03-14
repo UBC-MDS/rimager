@@ -1,4 +1,3 @@
-
 #' Crop the image to a circle
 #'
 #' Create a new image cropped by a circle mask and leave a margin
