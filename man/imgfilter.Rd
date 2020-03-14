@@ -22,10 +22,10 @@ modified image array
 \description{
 The filter types include 'blur' and 'sharpen'; where
 blur blends neighboring pixels and sharpen enhances edges.
-The strength of the filter indicates how much of effect is apllied
+The strength of the filter indicates how much of effect is applied
 to the image; where 0 is no effect and 1 is very strong effect.
 }
 \examples{
-path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
-OpenImageR::imageShow(imgfilter(path, "blur", 0.4))
+input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
+imgfilter(input_path, "blur", 0.2)
 }

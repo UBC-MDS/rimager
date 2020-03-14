@@ -2,7 +2,7 @@
 #'
 #' The filter types include 'blur' and 'sharpen'; where
 #' blur blends neighboring pixels and sharpen enhances edges.
-#' The strength of the filter indicates how much of effect is apllied
+#' The strength of the filter indicates how much of effect is applied
 #' to the image; where 0 is no effect and 1 is very strong effect.
 #'
 #' @param input_path character the file path of the image
@@ -15,8 +15,8 @@
 #' @export
 #'
 #' @examples
-#' path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
-#' OpenImageR::imageShow(imgfilter(path, "blur", 0.4))
+#' input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
+#' imgfilter(input_path, "blur", 0.2)
 imgfilter <- function(input_path, filter_type, strength, output_path=NULL) {
 
   # assert strength is of type integer or numeric
@@ -33,7 +33,7 @@ imgfilter <- function(input_path, filter_type, strength, output_path=NULL) {
   }
 
   # read in image as array
-  img <- OpenImageR::readImage(input_path)
+  img = OpenImageR::readImage(input_path)
   h <- dim(img)[1]
   w <- dim(img)[2]
   output_image <- img

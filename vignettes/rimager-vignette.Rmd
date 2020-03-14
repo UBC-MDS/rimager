@@ -38,7 +38,7 @@ Create a new image cropped by a circle mask and leave a margin
 `input_path`: character the image file path <br>
 `margin`: double the distance between circle boundary and the original image boundary
 
-## `reducize(input_file, output_file, width, height)`
+## `redusize(input_file, output_file, width, height)`
 
 #### Description:
 A new image with the modified width and height will be created
@@ -50,7 +50,7 @@ A new image with the modified width and height will be created
 `width`: integer, the width of the reduced image <br>
 `height`: integer, the height of the reduce image
 
-## `imgfilter(input_path, filter_type, strength, output_path = NULL))`
+## `imgfilter(input_path, filter_type, strength, output_path = NULL)`
 
 #### Description: 
 The filter types include 'blur' and 'sharpen'; where blur blends neighboring pixels and sharpen enhances edges. The strength of the filter indicates how much of effect is apllied to the image; where 0 is no effect and 1 is very strong effect.
