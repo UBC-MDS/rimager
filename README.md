@@ -52,14 +52,8 @@ by one line of code.
 
 ## Installation
 
-You can install the released version of rimager from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("rimager")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
