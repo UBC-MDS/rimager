@@ -26,6 +26,6 @@ The strength of the filter indicates how much of effect is apllied
 to the image; where 0 is no effect and 1 is very strong effect.
 }
 \examples{
-path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
-new <- imgfilter(path, "blur", 0.4)
+input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
+imgfilter(input_path, "blur", 0.2)
 }
