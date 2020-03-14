@@ -32,12 +32,13 @@ Conduct.](https://github.com/UBC-MDS/rimager/blob/master/CONDUCT.md)
 
 Want to edit an image in the shell instead of GUI applications?
 `rimager` is a R package that provides a quick and easy way to do some
-simple image processings and graphic editings. Based on the main needs
-of graphic editings, the package integrates four functionalities. It
-includes reduce the size of the image, crop image into a circle, reduce
-image colors, and apply cool effect filters. By input the path of the
-image, users can run any of these functions with one line of code to get
-a desired or interesting images.
+simple image processing and graphic editing. Based on the main needs of
+graphic editing, the package integrates four functionalities. The
+functionalities include: reducing the size of an image, cropping an
+image into a circle, reducing the number of colours in an image, and
+applying cool filter effects. By inputing the path of the image, users
+can run any of these functions with one line of code to get the desired
+image.
 
 ## Our package in R ecosystem:
 
@@ -84,17 +85,17 @@ devtools::install_github("UBC-MDS/rimager")
       - OpenImageR
 
 <span style="color:red"> Note: Because some operating systems
-(Uubuntu-16.04 ‘3.2’, ‘3.3’ ‘3.4’ and mocOs-devel) need older version of
+(Ubuntu-16.04 ‘3.2’, ‘3.3’ ‘3.4’ and mocOs-devel) need older version of
 packages (magick and plotrix) we used in development, we exclude the
 these OS in R-CMD-check. We got permission on slack.</span>
 
 see: [chat on slack for
-permmision](https://ubc-mds.slack.com/archives/C24GEK3PV/p1584161232445700?thread_ts=1584159682.445100&cid=C24GEK3PV)
+permission](https://ubc-mds.slack.com/archives/C24GEK3PV/p1584161232445700?thread_ts=1584159682.445100&cid=C24GEK3PV)
 
 ## Example
 
 see
-[rimager-Vinette](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html)
+[rimager-Vignette](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html)
 
 ## Package in python
 

@@ -22,7 +22,7 @@ modified image array
 \description{
 The filter types include 'blur' and 'sharpen'; where
 blur blends neighboring pixels and sharpen enhances edges.
-The strength of the filter indicates how much of effect is apllied
+The strength of the filter indicates how much of effect is applied
 to the image; where 0 is no effect and 1 is very strong effect.
 }
 \examples{
