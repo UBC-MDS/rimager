@@ -16,8 +16,8 @@
 #'
 #' @examples
 #' path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
-#' new <- img_filter(path, "blur", 0.4)
-img_filter <- function(input_path, filter_type, strength, output_path=NULL) {
+#' new <- imgfilter(path, "blur", 0.4)
+imgfilter <- function(input_path, filter_type, strength, output_path=NULL) {
 
   # assert strength is of type integer or numeric
   if (!is.integer(strength) & !is.numeric(strength)) {

@@ -5,9 +5,9 @@
 
 <!-- badges: start -->
 
-[![R build status](https://github.com/UBC-MDS/rimager/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rimager/action)
+[![R build
+status](https://github.com/UBC-MDS/rimager/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rimager/actions)
 [![codecov](https://codecov.io/gh/UBC-MDS/rimager/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rimager)
-
 <!-- badges: end -->
 
 The rimager package contains functions that aid in image manipulation
@@ -52,7 +52,8 @@ by one line of code.
 
 ## Installation
 
-You can install the development version from [GitHub](https://github.com/) with:
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -65,7 +66,7 @@ devtools::install_github("UBC-MDS/rimager")
     This can be useful when you want to make icons from images.
   - `redusize`: This function reduces the dimension of a given image by
     removing vertical and horizontal seams.
-  - `img_filter`: This function applies a filter to a given image,
+  - `imgfilter`: This function applies a filter to a given image,
     altering the visual aesthetic. This includes options to blur and
     sharpen the image with varying degrees of strength. This filter
     effect is achieved through the application of a matrix convolution
@@ -82,9 +83,18 @@ devtools::install_github("UBC-MDS/rimager")
       - jpeg
       - OpenImageR
 
+<span style="color:red"> Note: Because some operating systems
+(Uubuntu-16.04 ‘3.2’, ‘3.3’ ‘3.4’ and mocOs-devel) need older version of
+packages (magick and plotrix) we used in development, we exclude the
+these OS in R-CMD-check. We got permission on slack.</span>
+
+see: [chat on slack for
+permmision](https://ubc-mds.slack.com/archives/C24GEK3PV/p1584161232445700?thread_ts=1584159682.445100&cid=C24GEK3PV)
+
 ## Example
 
-see [rimager-Vinette](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html)  
+see
+[rimager-Vinette](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html)
 
 ## Package in python
 
