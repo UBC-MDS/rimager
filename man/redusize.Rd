@@ -4,16 +4,16 @@
 \alias{redusize}
 \title{A function to reduce the dimension of a give image by removing vertical and horizontal seams}
 \usage{
-redusize(input_file, ouput_file, width, height)
+redusize(input_file, output_file, width, height)
 }
 \arguments{
 \item{input_file}{character, the file path for the input file}
 
+\item{output_file}{character, the file path for the output file}
+
 \item{width}{integer, the width of the reduced image}
 
 \item{height}{integer, the height of the reduce image}
-
-\item{output_file}{character, the file path for the output file}
 }
 \value{
 an array of image
@@ -22,6 +22,6 @@ an array of image
 A new image with the modified width and height will be created
 }
 \examples{
-redusize("images/mandrill.jpg", "images/reduced.jpg", 297, 200)
-reduce_dimensions(input_file,output_file,width,height)
+input_path = system.file("tmp_image", "mandrill.jpg", package = "rimager")
+new <- redusize(input_path, "reduced.jpg", 297, 200)
 }

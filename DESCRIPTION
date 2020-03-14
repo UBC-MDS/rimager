@@ -21,7 +21,9 @@ Imports:
     OpenImageR,
     magick,
     jpeg,
-    plotrix
+    plotrix,
+    stats,
+    png
 VignetteBuilder: knitr
 URL: https://github.com/UBC-MDS/rimager
 BugReports: https://github.com/UBC-MDS/rimager/issues

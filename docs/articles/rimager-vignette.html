@@ -59,7 +59,14 @@
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/UBC-MDS/rimager">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -75,15 +82,15 @@
       <h1>rimager-vignette</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/UBC-MDS/rimager/blob/master/vignettes/rimager-vignette.Rmd"><code>vignettes/rimager-vignette.Rmd</code></a></small>
       <div class="hidden name"><code>rimager-vignette.Rmd</code></div>
 
     </div>
 
     
     
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rimager)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(OpenImageR)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rimager)</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(OpenImageR)</a></code></pre></div>
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
@@ -143,15 +150,15 @@
 <h2 class="hasAnchor">
 <a href="#reducolor" class="anchor"></a><code>reducolor</code>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">#style 0, reduce the image color to white and black and save the new image mandrill_reducolor0.jpg in</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#the images folder</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">mandrill_reducolor0 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/reducolor.html">reducolor</a></span>(<span class="dv">0</span>, <span class="st">"../images/mandrill.jpg"</span>, <span class="st">"../images/mandrill_reducolor0.jpg"</span>)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw"><a href="https://rdrr.io/pkg/OpenImageR/man/imageShow.html">imageShow</a></span>(mandrill_reducolor0)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co">#style 0, reduce the image color to white and black and save the new image mandrill_reducolor0.jpg in</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co">#the images folder</span></a>
+<a class="sourceLine" id="cb2-3" title="3">mandrill_reducolor0 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/reducolor.html">reducolor</a></span>(<span class="dv">0</span>, <span class="st">"../images/mandrill.jpg"</span>, <span class="st">"../images/mandrill_reducolor0.jpg"</span>)</a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="kw">imageShow</span>(mandrill_reducolor0)</a></code></pre></div>
 <p><img src="rimager-vignette_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co">#style 1, reduce the image color to 8 colors. And because the output_path is NULL, the image will</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#not be saved as a file.</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">mandrill_reducolor1 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/reducolor.html">reducolor</a></span>(<span class="dv">1</span>, <span class="dt">input_path =</span> <span class="st">"../images/mandrill.jpg"</span>, <span class="dt">output_path =</span> <span class="ot">NULL</span>)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="kw"><a href="https://rdrr.io/pkg/OpenImageR/man/imageShow.html">imageShow</a></span>(mandrill_reducolor1)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">#style 1, reduce the image color to 8 colors. And because the output_path is NULL, the image will</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">#not be saved as a file.</span></a>
+<a class="sourceLine" id="cb3-3" title="3">mandrill_reducolor1 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/reducolor.html">reducolor</a></span>(<span class="dv">1</span>, <span class="dt">input_path =</span> <span class="st">"../images/mandrill.jpg"</span>, <span class="dt">output_path =</span> <span class="ot">NULL</span>)</a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">imageShow</span>(mandrill_reducolor1)</a></code></pre></div>
 <p><img src="rimager-vignette_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
 </div>
 </div>
