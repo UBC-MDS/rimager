@@ -1,6 +1,6 @@
 Package: rimager
 Title: Process images
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: c(person("Zhengyang (Zoe) Pan", "Developer", role = c("aut", "cre")),
               person("Haoyu (Clara) Su", "Developer", role = "aut",
                       email = "haoyu.su.ubc@gmail.com"),
