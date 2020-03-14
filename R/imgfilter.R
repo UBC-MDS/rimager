@@ -16,7 +16,7 @@
 #'
 #' @examples
 #' path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
-#' new <- imgfilter(path, "blur", 0.4)
+#' OpenImageR::imageShow(imgfilter(path, "blur", 0.4))
 imgfilter <- function(input_path, filter_type, strength, output_path=NULL) {
 
   # assert strength is of type integer or numeric
