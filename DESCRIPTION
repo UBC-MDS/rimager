@@ -1,9 +1,9 @@
 Package: rimager
 Title: Process images
 Version: 0.0.0.9000
-Authors@R: c(person("Zhengyang (Zoe) Pan", "Developer", role = c("aut", "cre"),
+Authors@R: c(person("Zhengyang (Zoe) Pan", "Developer", role = c("aut", "cre")),
+              person("Haoyu (Clara) Su", "Developer", role = "aut",
                       email = "haoyu.su.ubc@gmail.com"),
-              person("Haoyu (Clara) Su", "Developer", role = "aut"),
               person("Keanna Knebel", "Developer", role = "aut"),
               person("Mohammed Salama", "Developer", role = "aut"))
 Description: This package is to make some magic effect to images.
