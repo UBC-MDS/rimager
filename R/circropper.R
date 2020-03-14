@@ -1,3 +1,4 @@
+library(magick)
 
 #' Crop the image to a circle
 #'
@@ -7,17 +8,11 @@
 #' @param margin double the distance between circle boundary and the original image boundary
 #'
 #' @return a cropped image
-#'
-#' @import magick
-#' @importFrom grDevices dev.off png
-#' @importFrom graphics par plot
-#'
 #' @export
 #'
 #'
 #' @examples
-#' path = system.file("tmp_image", "mandrill.jpg", package = "rimager")
-#' circropper(path, 20)
+#' circropper("tests/milad.jpg", 20)}
 
 circropper <- function(input_path, margin) {
   # Check argument type

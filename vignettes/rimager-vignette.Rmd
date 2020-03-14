@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(OpenImageR)
 library(rimager)
+library(magick)
+library(jpeg)
 ```
 
 
@@ -28,19 +30,47 @@ library(rimager)
 
 # Functions
 
-## `circropper()`
+## `circropper(input_path, margin)`
 
-## `reducize()`
+#### Description: 
+Create a new image cropped by a circle mask and leave a margin
 
-## `imgfilter()`
+#### Arguments:
+
+`input_path`: character the image file path <br>
+`margin`: double the distance between circle boundary and the original image boundary
+
+## `reducize(input_file, output_file, width, height)`
+
+#### Description:
+A new image with the modified width and height will be created
+
+#### Arguments:
+
+`input_file`: character, the file path for the input file <br>
+`output_file`: character, the file path for the output file <br>
+`width`: integer, the width of the reduced image <br>
+`height`: integer, the height of the reduce image
+
+## `imgfilter(input_path, filter_type, strength, output_path = NULL))`
+
+#### Description: 
+The filter types include 'blur' and 'sharpen'; where blur blends neighboring pixels and sharpen enhances edges. The strength of the filter indicates how much of effect is apllied to the image; where 0 is no effect and 1 is very strong effect.
+
+#### Arguments:
+
+`input_path`: character the file path of the image <br>
+`filter_type`: character filter to be applied to the input image. options: 'blur' and 'sharpen' <br>
+`strength`: numeric or integer (0 to 1) the strength of the selected filter effect <br>
+`output_path`: character or NULL (default NULL); the file path of the resultant image <br>
 
 ## `reducolor(style, input_path, output_path = NULL)` 
 
-Description: 
+#### Description: 
 
 Reduce the image color to either 2 or 8 colors for cartoonized effect.  
 
-Arguments:
+#### Arguments:
 
 `style`: integer, either 0 or 1 0 for white and black colors, 1 for 8 colors  
 `input_path`: character, the image file path  
@@ -51,13 +81,25 @@ Arguments:
 
 We will use `mandrill.jpg` saved in the `images` folder of this repository.
 
-![mandill.jpg](../images/mandrill.jpg)
+<img src="../images/mandrill.jpg">
+
 
 ## `circropper`
+```{r }
+circropper("../images/mandrill.jpg", 0)
+```
 
 ## `redusize`
+```{r}
+mandrill_redusize <- redusize("../images/mandrill.jpg", "../images/mandrill_redusize.jpg", 297, 200)
+imageShow(mandrill_redusize)
+```
 
 ## `imgfilter`
+```{r}
+mandrill_imgfilter <- imgfilter("../images/mandrill.jpg", "blur", 0.4)
+imageShow(mandrill_imgfilter)
+```
 
 ## `reducolor`
 ```{r }

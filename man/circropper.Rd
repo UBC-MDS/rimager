@@ -17,7 +17,3 @@ a cropped image
 \description{
 Create a new image cropped by a circle mask and leave a margin
 }
-\examples{
-path = system.file("tmp_image", "mandrill.jpg", package = "rimager")
-circropper(path, 20)
-}

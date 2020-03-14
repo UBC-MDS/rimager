@@ -73,15 +73,49 @@ devtools::install_github("UBC-MDS/rimager")
     - jpeg
     - OpenImageR
 
-## Example
+## Usage examples 
 
-This is a basic example which shows you how to solve a common problem:
+We will use `mandrill.jpg` saved in the images folder of this repository for the examples.
 
-```{r example ,results="hide"}
+```{r setup}
+library(OpenImageR)
 library(rimager)
-## basic example code
-redusize("images/mandrill.jpg", "images/reduced.jpg", 297, 200)
+library(magick)
+library(jpeg)
 ```
+
+## `circropper`
+```{r }
+circropper("images/mandrill.jpg", 0)
+```
+
+## `redusize`
+```{r}
+mandrill_redusize <- redusize("images/mandrill.jpg", "images/mandrill_redusize.jpg", 297, 200)
+imageShow(mandrill_redusize)
+```
+
+## `imgfilter`
+```{r}
+mandrill_imgfilter <- imgfilter("images/mandrill.jpg", "blur", 0.4)
+imageShow(mandrill_imgfilter)
+```
+
+## `reducolor`
+```{r }
+#style 0, reduce the image color to white and black and save the new image mandrill_reducolor0.jpg in
+#the images folder
+mandrill_reducolor0 <- reducolor(0, "images/mandrill.jpg", "images/mandrill_reducolor0.jpg")
+imageShow(mandrill_reducolor0)
+```
+
+```{r }
+#style 1, reduce the image color to 8 colors. And because the output_path is NULL, the image will
+#not be saved as a file.
+mandrill_reducolor1 <- reducolor(1, input_path = "images/mandrill.jpg", output_path = NULL)
+imageShow(mandrill_reducolor1)
+```
+
 
 ## Package in python
 
