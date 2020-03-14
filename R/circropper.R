@@ -17,7 +17,6 @@
 #' @examples
 #' path = system.file("tmp_image", "mandrill.jpg", package = "rimager")
 #' circropper(path, 20)
-
 circropper <- function(input_path, margin) {
   # Check argument type
   if (!is.character(input_path) & !is.double(margin)){
