@@ -18,12 +18,14 @@ Suggests:
     covr
 RoxygenNote: 7.0.2
 Imports: 
+    grDevices,
+    graphics,
     OpenImageR,
     magick,
     jpeg,
     plotrix,
-    stats,
-    png
+    stats
+    
 VignetteBuilder: knitr
 URL: https://github.com/UBC-MDS/rimager
 BugReports: https://github.com/UBC-MDS/rimager/issues
