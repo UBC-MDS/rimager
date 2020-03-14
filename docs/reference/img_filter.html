@@ -101,7 +101,12 @@ to the image; where 0 is no effect and 1 is very strong effect." />
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/UBC-MDS/rimager">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -116,7 +121,7 @@ to the image; where 0 is no effect and 1 is very strong effect." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Applies a filter to a given image to edit the visual aesthetic.</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/UBC-MDS/rimager/blob/master/R/img_filter.R'><code>R/img_filter.R</code></a></small>
     <div class="hidden name"><code>img_filter.Rd</code></div>
     </div>
 
@@ -156,7 +161,8 @@ options: 'blur' and 'sharpen'</p></td>
     <p>modified image array</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>img_filter</span>(<span class='st'>"images/mandrill.jpg"</span>, <span class='st'>"blur"</span>, <span class='fl'>0.4</span>)</div><div class='output co'>#&gt; <span class='error'>Error in OpenImageR::readImage(input_path): the path to an image is invalid or the image does not exist</span></div></pre>
+    <pre class="examples"><div class='input'><span class='no'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"tmp_image"</span>, <span class='st'>"mandrill.jpg"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"rimager"</span>)
+<span class='no'>new</span> <span class='kw'>&lt;-</span> <span class='fu'>img_filter</span>(<span class='no'>path</span>, <span class='st'>"blur"</span>, <span class='fl'>0.4</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

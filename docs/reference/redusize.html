@@ -98,7 +98,12 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/UBC-MDS/rimager">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -113,7 +118,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>A function to reduce the dimension of a give image by removing vertical and horizontal seams</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/UBC-MDS/rimager/blob/master/R/redusize.R'><code>R/redusize.R</code></a></small>
     <div class="hidden name"><code>redusize.Rd</code></div>
     </div>
 
@@ -121,7 +126,7 @@
     <p>A new image with the modified width and height will be created</p>
     </div>
 
-    <pre class="usage"><span class='fu'>redusize</span>(<span class='no'>input_file</span>, <span class='no'>ouput_file</span>, <span class='no'>width</span>, <span class='no'>height</span>)</pre>
+    <pre class="usage"><span class='fu'>redusize</span>(<span class='no'>input_file</span>, <span class='no'>output_file</span>, <span class='no'>width</span>, <span class='no'>height</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,16 +136,16 @@
       <td><p>character, the file path for the input file</p></td>
     </tr>
     <tr>
+      <th>output_file</th>
+      <td><p>character, the file path for the output file</p></td>
+    </tr>
+    <tr>
       <th>width</th>
       <td><p>integer, the width of the reduced image</p></td>
     </tr>
     <tr>
       <th>height</th>
       <td><p>integer, the height of the reduce image</p></td>
-    </tr>
-    <tr>
-      <th>output_file</th>
-      <td><p>character, the file path for the output file</p></td>
     </tr>
     </table>
 
@@ -149,7 +154,8 @@
     <p>an array of image</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>redusize</span>(<span class='st'>"images/mandrill.jpg"</span>, <span class='st'>"images/reduced.jpg"</span>, <span class='fl'>297</span>, <span class='fl'>200</span>)</div><div class='output co'>#&gt; <span class='error'>Error in jpeg::readJPEG(input_file): unable to open images/mandrill.jpg</span></div><div class='input'><span class='fu'>reduce_dimensions</span>(<span class='no'>input_file</span>,<span class='no'>output_file</span>,<span class='no'>width</span>,<span class='no'>height</span>)</div><div class='output co'>#&gt; <span class='error'>Error in reduce_dimensions(input_file, output_file, width, height): could not find function "reduce_dimensions"</span></div></pre>
+    <pre class="examples"><div class='input'><span class='no'>input_path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"tmp_image"</span>, <span class='st'>"mandrill.jpg"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"rimager"</span>)
+<span class='no'>new</span> <span class='kw'>&lt;-</span> <span class='fu'>redusize</span>(<span class='no'>input_path</span>, <span class='st'>"reduced.jpg"</span>, <span class='fl'>297</span>, <span class='fl'>200</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

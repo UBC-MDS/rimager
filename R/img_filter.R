@@ -15,7 +15,8 @@
 #' @export
 #'
 #' @examples
-#' img_filter("images/mandrill.jpg", "blur", 0.4)
+#' path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
+#' new <- img_filter(path, "blur", 0.4)
 img_filter <- function(input_path, filter_type, strength, output_path=NULL) {
 
   # assert strength is of type integer or numeric
@@ -32,7 +33,7 @@ img_filter <- function(input_path, filter_type, strength, output_path=NULL) {
   }
 
   # read in image as array
-  img = OpenImageR::readImage(input_path)
+  img <- OpenImageR::readImage(input_path)
   h <- dim(img)[1]
   w <- dim(img)[2]
   output_image <- img

@@ -8,12 +8,17 @@
 #'                    in the provided folder path and name
 #'
 #' @return modified image array
+#'
+#' @importFrom stats median
+#'
 #' @export
 #'
 #' @examples
-#' reducolor(0, "tests/milad.jpg", "tests/milad_new.jpg")
+#' input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
+#' new <- reducolor(0, input_path, "new.jpg")
+#' OpenImageR::imageShow(new)
 reducolor <- function(style, input_path, output_path=NULL) {
-  img = OpenImageR::readImage(input_path)
+  img <- OpenImageR::readImage(input_path)
   height <- dim(img)[1]
   width <- dim(img)[2]
   red <- img[, , 1]
@@ -37,7 +42,7 @@ reducolor <- function(style, input_path, output_path=NULL) {
   }
 
   if (!is.null(output_path)) {
-    writeImage(new_img, output_path)
+    OpenImageR::writeImage(new_img, output_path)
     paste("New image saved in", output_path)
   }
   return(new_img)
