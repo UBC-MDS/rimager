@@ -1,4 +1,5 @@
-#' A function to reduce the dimension of a give image by removing vertical and horizontal seams
+#' Reduces the dimension of a given image by removing vertical and
+#' horizontal seams
 #'
 #' A new image with the modified width and height will be created
 #'
@@ -14,46 +15,44 @@
 redusize <- function(input_file, output_file, width, height) {
   img <- jpeg::readJPEG(input_file)
 
-  nrows = nrow(img)
-  ncols = ncol(img)
+  nrows <- nrow(img)
+  ncols <- ncol(img)
 
 
   # added exception
-  if (height > ncols) {stop("Value Error: Width should be less than the original width")}
-  if (width > nrows) {stop("Value Error: Height should be less than the original height")}
+  if (height > ncols) {
+    stop("Value Error: Width should be less than the original width")
+  }
+  if (width > nrows) {
+    stop("Value Error: Height should be less than the original height")
+  }
 
 
 
 
-  rem_rows = (nrows - width) %% 2
-  rem_cols = (ncols - height) %% 2
+  rem_rows <- (nrows - width) %% 2
+  rem_cols <- (ncols - height) %% 2
 
   if ((width %% 2) == 0) {
-    remov_rows = ((nrows / 2) - (width / 2) + 1):((nrows / 2) + (width / 2))
-
+    remov_rows <- ((nrows / 2) - (width / 2) + 1):((nrows / 2) + (width / 2))
   } else {
-    remov_rows = floor(((nrows / 2) - (width / 2) + 1)):trunc(((nrows / 2) +
-                                                                 (width / 2)))
+    remov_rows <- floor(((nrows / 2) - (width / 2) + 1)):trunc(((nrows / 2) +
+      (width / 2)))
   }
   if ((height %% 2) == 0) {
-    remov_cols = ((ncols / 2) - (height / 2) + 1):((ncols / 2) + (height / 2))
-
+    remov_cols <- ((ncols / 2) - (height / 2) + 1):((ncols / 2) + (height / 2))
   } else {
-    remov_cols = floor(((ncols / 2)) - (height / 2) + 1):trunc(((ncols / 2)) + (height /
-                                                                                  2))
+    remov_cols <- floor(((ncols / 2)) - (height / 2) + 1):trunc(((ncols / 2)) + (height / 2))
   }
 
-  new_img = array(dim = c(width, height, dim(img)[3]))
+  new_img <- array(dim = c(width, height, dim(img)[3]))
 
 
 
   for (i in 1:dim(img)[3]) {
-    new_img[, , i] = img[, , i][remov_rows, remov_cols]
+    new_img[, , i] <- img[, , i][remov_rows, remov_cols]
   }
 
   jpeg::writeJPEG(new_img, target = output_file)
   return(new_img)
-
-
 }
-

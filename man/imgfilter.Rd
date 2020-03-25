@@ -12,9 +12,11 @@ imgfilter(input_path, filter_type, strength, output_path = NULL)
 \item{filter_type}{character filter to be applied to the input image
 options: 'blur' and 'sharpen'}
 
-\item{strength}{numeric or integer (0 to 1) the strength of the selected filter effect}
+\item{strength}{numeric or integer (0 to 1);
+the strength of the selected filter effect}
 
-\item{output_path}{character or NULL (default NULL); the file path of the resultant image}
+\item{output_path}{character or NULL (default NULL);
+the file path of the resultant image}
 }
 \value{
 modified image array
