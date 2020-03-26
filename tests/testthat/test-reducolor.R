@@ -6,11 +6,11 @@ test_that("Expect two colors only, more or less are returned", {
 })
 
 test_that("Expect eight colors, more or less are returned", {
-  expect_equal(length(unique(as.vector(reducolor("../milad.jpg", "eight")[, , 1])))*
-                 length(unique(as.vector(reducolor("../milad.jpg", "eight")[, , 2])))*
+  expect_equal(length(unique(as.vector(reducolor("../milad.jpg", "eight")[, , 1]))) *
+                 length(unique(as.vector(reducolor("../milad.jpg", "eight")[, , 2]))) *
                  length(unique(as.vector(reducolor("../milad.jpg", "eight")[, , 3]))), 8)
-  expect_equal(length(unique(as.vector(reducolor("../mandrill.jpg", "eight")[, , 1])))*
-                 length(unique(as.vector(reducolor("../mandrill.jpg", "eight")[, , 2])))*
+  expect_equal(length(unique(as.vector(reducolor("../mandrill.jpg", "eight")[, , 1]))) *
+                 length(unique(as.vector(reducolor("../mandrill.jpg", "eight")[, , 2]))) *
                  length(unique(as.vector(reducolor("../mandrill.jpg", "eight")[, , 3]))), 8)
 
 })

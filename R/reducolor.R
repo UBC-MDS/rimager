@@ -17,7 +17,7 @@
 #' input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
 #' new <- reducolor(input_path, c("black", "white"), "new.jpg")
 #' OpenImageR::imageShow(new)
-reducolor <- function(input_path, style, output_path=NULL) {
+reducolor <- function(input_path, style, output_path = NULL) {
   color_list <- list("white" = c(1, 1, 1), "black" = c(0, 0, 0), "red" = c(1, 0, 0),
                     "green" = c(0, 1, 0), "blue" = c(0, 0, 1), "yellow" = c(1, 1, 0),
                     "pink" = c(1, 0.686, 0.843), "aqua" = c(0, 1, 1))
@@ -28,10 +28,10 @@ reducolor <- function(input_path, style, output_path=NULL) {
   green <- img[, , 2]
   blue <- img[, , 3]
 
-  if (length(style)!=1 & length(style)!=2) {
+  if (length(style) != 1 & length(style) != 2) {
     stop("Input for style should be of length 1 or 2")}
 
-  if (length(style)==2) {
+  if (length(style) == 2) {
     if (sum(style[1] == names(color_list)) == 0) {
       stop(paste0(style[1], " is not available, please choose from ", list(names(color_list))))}
     if (sum(style[2] == names(color_list)) == 0) {
@@ -45,7 +45,7 @@ reducolor <- function(input_path, style, output_path=NULL) {
     new_img[, , 2][(red+green+blue)/3 >= 0.5] <- color_list[[style[2]]][2]
     new_img[, , 3][(red+green+blue)/3 < 0.5] <- color_list[[style[1]]][3]
     new_img[, , 3][(red+green+blue)/3 >= 0.5] <- color_list[[style[2]]][3]
-  } else if (length(style)==1) {
+  } else if (length(style) == 1) {
     if (style[1] != "eight") {
       stop("Please put \"eight\" for eight colors or selected two colors")}
     new_img <- array(dim=c(height, width, 3))
