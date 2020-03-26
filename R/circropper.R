@@ -5,6 +5,8 @@
 #' @param input_path character the image file path
 #' @param margin double the distance between circle boundary and the original
 #'   image boundary
+#' @param output_path character if not NULL, the modified image will be saved
+#'   in the provided folder path and name
 #'
 #' @return a cropped image
 #'
@@ -17,7 +19,7 @@
 #'
 #' @examples
 #' path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
-#' circropper(path, 0)
+#' circropper(path, 0, "new.png")
 circropper <- function(input_path, margin, output_path = NULL) {
   # Check argument type
   if (!is.character(input_path) & !is.double(margin)) {
