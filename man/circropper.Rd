@@ -4,13 +4,16 @@
 \alias{circropper}
 \title{Crop the image to a circle}
 \usage{
-circropper(input_path, margin)
+circropper(input_path, margin, output_path = NULL)
 }
 \arguments{
 \item{input_path}{character the image file path}
 
 \item{margin}{double the distance between circle boundary and the original
 image boundary}
+
+\item{output_path}{character if not NULL, the modified image will be saved
+in the provided folder path and name}
 }
 \value{
 a cropped image
@@ -20,5 +23,5 @@ Create a new image cropped by a circle mask and leave a margin
 }
 \examples{
 path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
-circropper(path, 20)
+circropper(path, 0, "new.png")
 }

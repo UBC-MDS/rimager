@@ -98,3 +98,10 @@ altered image by one line of code.
 
 We have a package with the same functionalities in python:
 [`pyimager`](https://github.com/UBC-MDS/pyimager)
+
+## Documentation
+
+The official documentation is hosted on
+[pkgdown](https://ubc-mds.github.io/rimager/). You can also refer to the
+[html
+vignette](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html).
