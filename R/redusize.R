@@ -27,15 +27,15 @@ redusize <- function(input_path, output_path, height, width) {
   rem_cols <- (ncols - width) %% 2
 
   if ((height %% 2) == 0) {
-    remov_rows <- ((nrows / 2) - (height / 2) + 1):((nrows / 2) + (height / 2))
+    remov_rows <- ((nrows/2) - (height/2) + 1):((nrows/2) + (height/2))
   } else {
-    remov_rows <- floor(((nrows / 2) - (height / 2) + 1)):trunc(((nrows / 2) +
-      (height / 2)))
+    remov_rows <- floor(((nrows/2) - (height/2) + 1)):trunc(((nrows/2) +
+      (height/2)))
   }
   if ((width %% 2) == 0) {
-    remov_cols <- ((ncols / 2) - (width / 2) + 1):((ncols / 2) + (width / 2))
+    remov_cols <- ((ncols/2) - (width/2) + 1):((ncols / 2) + (width/2))
   } else {
-    remov_cols <- floor(((ncols / 2)) - (width / 2) + 1):trunc(((ncols / 2)) + (width / 2))
+    remov_cols <- floor(((ncols/2)) - (width/2) + 1):trunc(((ncols/2)) + (width/2))
   }
 
   new_img <- array(dim = c(height, width, dim(img)[3]))
