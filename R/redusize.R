@@ -3,8 +3,8 @@
 #'
 #' A new image with the modified width and height will be created
 #'
-#' @param input_file character, the file path for the input file
-#' @param output_file character, the file path for the output file
+#' @param input_path character, the path for the input file
+#' @param output_path character, the path for the output file
 #' @param width integer, the width of the reduced image
 #' @param height integer, the height of the reduce image
 #' @return an array of image
@@ -12,8 +12,8 @@
 #' @examples
 #' input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
 #' OpenImageR::imageShow(redusize(input_path, "reduced.jpg", 297, 200))
-redusize <- function(input_file, output_file, width, height) {
-  img <- jpeg::readJPEG(input_file)
+redusize <- function(input_path, output_path, width, height) {
+  img <- jpeg::readJPEG(input_path)
 
   nrows <- nrow(img)
   ncols <- ncol(img)
@@ -53,6 +53,6 @@ redusize <- function(input_file, output_file, width, height) {
     new_img[, , i] <- img[, , i][remov_rows, remov_cols]
   }
 
-  jpeg::writeJPEG(new_img, target = output_file)
+  jpeg::writeJPEG(new_img, target = output_path)
   return(new_img)
 }
