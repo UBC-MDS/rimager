@@ -23,5 +23,5 @@ A new image with the modified width and height will be created
 }
 \examples{
 input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
-new <- redusize(input_path, "reduced.jpg", 297, 200)
+OpenImageR::imageShow(redusize(input_path, "reduced.jpg", 297, 200))
 }

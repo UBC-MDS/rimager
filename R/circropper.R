@@ -1,4 +1,3 @@
-
 #' Crop the image to a circle
 #'
 #' Create a new image cropped by a circle mask and leave a margin
@@ -18,7 +17,6 @@
 #' @examples
 #' path = system.file("tmp_image", "mandrill.jpg", package = "rimager")
 #' circropper(path, 20)
-
 circropper <- function(input_path, margin) {
   # Check argument type
   if (!is.character(input_path) & !is.double(margin)){

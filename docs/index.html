@@ -83,7 +83,6 @@
 <a href="#rimager" class="anchor"></a>rimager</h1></div>
 <!-- badges: start -->
 
-<!-- badges: end -->
 <p>The rimager package contains functions that aid in image manipulation and processing.</p>
 <p>This package was developed as a project for DSCI-524.</p>
 <div id="creators" class="section level2">
@@ -141,7 +140,7 @@
 <li>
 <code>redusize</code>: This function reduces the dimension of a given image by removing vertical and horizontal seams.</li>
 <li>
-<code>img_filter</code>: This function applies a filter to a given image, altering the visual aesthetic. This includes options to blur and sharpen the image with varying degrees of strength. This filter effect is achieved through the application of a matrix convolution with the filter kernel and original image.</li>
+<code>imgfilter</code>: This function applies a filter to a given image, altering the visual aesthetic. This includes options to blur and sharpen the image with varying degrees of strength. This filter effect is achieved through the application of a matrix convolution with the filter kernel and original image.</li>
 <li>
 <code>reducolor</code>: This function reduces the image colors to get the cartoonized color effect. This can be either white and black images or eight colors images.</li>
 </ul>
@@ -159,6 +158,8 @@
 </ul>
 </li>
 </ul>
+<p><span style="color:red"> Note: Because some operating systems (Uubuntu-16.04 ‘3.2’, ‘3.3’ ‘3.4’ and mocOs-devel) need older version of packages (magick and plotrix) we used in development, we exclude the these OS in R-CMD-check. We got permission on slack.</span></p>
+<p>see: <a href="https://ubc-mds.slack.com/archives/C24GEK3PV/p1584161232445700?thread_ts=1584159682.445100&amp;cid=C24GEK3PV">chat on slack for permmision</a></p>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
@@ -206,7 +207,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/UBC-MDS/rimager/action"><img src="https://github.com/UBC-MDS/rimager/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://github.com/UBC-MDS/rimager/actions"><img src="https://github.com/UBC-MDS/rimager/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://codecov.io/gh/UBC-MDS/rimager"><img src="https://codecov.io/gh/UBC-MDS/rimager/branch/master/graph/badge.svg" alt="codecov"></a></li>
 </ul>
 </div>

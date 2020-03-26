@@ -89,8 +89,8 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rimager)</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(OpenImageR)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(OpenImageR)</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rimager)</a></code></pre></div>
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
@@ -99,67 +99,109 @@
 <div id="functions" class="section level1">
 <h1 class="hasAnchor">
 <a href="#functions" class="anchor"></a>Functions</h1>
-<div id="circropper" class="section level2">
+<div id="circropperinput_path-margin" class="section level2">
 <h2 class="hasAnchor">
-<a href="#circropper" class="anchor"></a><code>circropper()</code>
+<a href="#circropperinput_path-margin" class="anchor"></a><code>circropper(input_path, margin)</code>
 </h2>
+<div id="description" class="section level4">
+<h4 class="hasAnchor">
+<a href="#description" class="anchor"></a>Description:</h4>
+<p>Create a new image cropped by a circle mask and leave a margin</p>
 </div>
-<div id="reducize" class="section level2">
-<h2 class="hasAnchor">
-<a href="#reducize" class="anchor"></a><code>reducize()</code>
-</h2>
+<div id="arguments" class="section level4">
+<h4 class="hasAnchor">
+<a href="#arguments" class="anchor"></a>Arguments:</h4>
+<p><code>input_path</code>: character the image file path <br><code>margin</code>: double the distance between circle boundary and the original image boundary</p>
 </div>
-<div id="imgfilter" class="section level2">
+</div>
+<div id="reducizeinput_file-output_file-width-height" class="section level2">
 <h2 class="hasAnchor">
-<a href="#imgfilter" class="anchor"></a><code>imgfilter()</code>
+<a href="#reducizeinput_file-output_file-width-height" class="anchor"></a><code>reducize(input_file, output_file, width, height)</code>
 </h2>
+<div id="description-1" class="section level4">
+<h4 class="hasAnchor">
+<a href="#description-1" class="anchor"></a>Description:</h4>
+<p>A new image with the modified width and height will be created</p>
+</div>
+<div id="arguments-1" class="section level4">
+<h4 class="hasAnchor">
+<a href="#arguments-1" class="anchor"></a>Arguments:</h4>
+<p><code>input_file</code>: character, the file path for the input file <br><code>output_file</code>: character, the file path for the output file <br><code>width</code>: integer, the width of the reduced image <br><code>height</code>: integer, the height of the reduce image</p>
+</div>
+</div>
+<div id="imgfilterinput_path-filter_type-strength-output_path-null" class="section level2">
+<h2 class="hasAnchor">
+<a href="#imgfilterinput_path-filter_type-strength-output_path-null" class="anchor"></a><code>imgfilter(input_path, filter_type, strength, output_path = NULL))</code>
+</h2>
+<div id="description-2" class="section level4">
+<h4 class="hasAnchor">
+<a href="#description-2" class="anchor"></a>Description:</h4>
+<p>The filter types include ‘blur’ and ‘sharpen’; where blur blends neighboring pixels and sharpen enhances edges. The strength of the filter indicates how much of effect is apllied to the image; where 0 is no effect and 1 is very strong effect.</p>
+</div>
+<div id="arguments-2" class="section level4">
+<h4 class="hasAnchor">
+<a href="#arguments-2" class="anchor"></a>Arguments:</h4>
+<p><code>input_path</code>: character the file path of the image <br><code>filter_type</code>: character filter to be applied to the input image. options: ‘blur’ and ‘sharpen’ <br><code>strength</code>: numeric or integer (0 to 1) the strength of the selected filter effect <br><code>output_path</code>: character or NULL (default NULL); the file path of the resultant image <br></p>
+</div>
 </div>
 <div id="reducolorstyle-input_path-output_path-null" class="section level2">
 <h2 class="hasAnchor">
 <a href="#reducolorstyle-input_path-output_path-null" class="anchor"></a><code>reducolor(style, input_path, output_path = NULL)</code>
 </h2>
-<p>Description:</p>
+<div id="description-3" class="section level4">
+<h4 class="hasAnchor">
+<a href="#description-3" class="anchor"></a>Description:</h4>
 <p>Reduce the image color to either 2 or 8 colors for cartoonized effect.</p>
-<p>Arguments:</p>
+</div>
+<div id="arguments-3" class="section level4">
+<h4 class="hasAnchor">
+<a href="#arguments-3" class="anchor"></a>Arguments:</h4>
 <p><code>style</code>: integer, either 0 or 1 0 for white and black colors, 1 for 8 colors<br><code>input_path</code>: character, the image file path<br><code>output_path</code>: character, if not Null, the modified image will be saved in the provided folder path and name</p>
+</div>
 </div>
 </div>
 <div id="examples" class="section level1">
 <h1 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h1>
 <p>We will use <code>mandrill.jpg</code> saved in the <code>images</code> folder of this repository.</p>
-<div class="figure">
-<img src="../images/mandrill.jpg" alt="mandill.jpg"><p class="caption">mandill.jpg</p>
-</div>
-<div id="circropper-1" class="section level2">
+<p><img src="../images/mandrill.jpg"></p>
+<div id="circropper" class="section level2">
 <h2 class="hasAnchor">
-<a href="#circropper-1" class="anchor"></a><code>circropper</code>
+<a href="#circropper" class="anchor"></a><code>circropper</code>
 </h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="../reference/circropper.html">circropper</a></span>(<span class="st">"../images/mandrill.jpg"</span>, <span class="dv">0</span>)</a></code></pre></div>
+<p><img src="rimager-vignette_files/figure-html/unnamed-chunk-2-1.png" width="149"></p>
 </div>
 <div id="redusize" class="section level2">
 <h2 class="hasAnchor">
 <a href="#redusize" class="anchor"></a><code>redusize</code>
 </h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">mandrill_redusize &lt;-<span class="st"> </span><span class="kw"><a href="../reference/redusize.html">redusize</a></span>(<span class="st">"../images/mandrill.jpg"</span>, <span class="st">"../images/mandrill_redusize.jpg"</span>, <span class="dv">297</span>, <span class="dv">200</span>)</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">imageShow</span>(mandrill_redusize)</a></code></pre></div>
+<p><img src="rimager-vignette_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
 </div>
-<div id="imgfilter-1" class="section level2">
+<div id="imgfilter" class="section level2">
 <h2 class="hasAnchor">
-<a href="#imgfilter-1" class="anchor"></a><code>imgfilter</code>
+<a href="#imgfilter" class="anchor"></a><code>imgfilter</code>
 </h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">mandrill_imgfilter &lt;-<span class="st"> </span><span class="kw"><a href="../reference/imgfilter.html">imgfilter</a></span>(<span class="st">"../images/mandrill.jpg"</span>, <span class="st">"blur"</span>, <span class="fl">0.4</span>)</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">imageShow</span>(mandrill_imgfilter)</a></code></pre></div>
+<p><img src="rimager-vignette_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 </div>
 <div id="reducolor" class="section level2">
 <h2 class="hasAnchor">
 <a href="#reducolor" class="anchor"></a><code>reducolor</code>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co">#style 0, reduce the image color to white and black and save the new image mandrill_reducolor0.jpg in</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="co">#the images folder</span></a>
-<a class="sourceLine" id="cb2-3" title="3">mandrill_reducolor0 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/reducolor.html">reducolor</a></span>(<span class="dv">0</span>, <span class="st">"../images/mandrill.jpg"</span>, <span class="st">"../images/mandrill_reducolor0.jpg"</span>)</a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="kw">imageShow</span>(mandrill_reducolor0)</a></code></pre></div>
-<p><img src="rimager-vignette_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">#style 1, reduce the image color to 8 colors. And because the output_path is NULL, the image will</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co">#not be saved as a file.</span></a>
-<a class="sourceLine" id="cb3-3" title="3">mandrill_reducolor1 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/reducolor.html">reducolor</a></span>(<span class="dv">1</span>, <span class="dt">input_path =</span> <span class="st">"../images/mandrill.jpg"</span>, <span class="dt">output_path =</span> <span class="ot">NULL</span>)</a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="kw">imageShow</span>(mandrill_reducolor1)</a></code></pre></div>
-<p><img src="rimager-vignette_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co">#style 0, reduce the image color to white and black and save the new image mandrill_reducolor0.jpg in</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co">#the images folder</span></a>
+<a class="sourceLine" id="cb5-3" title="3">mandrill_reducolor0 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/reducolor.html">reducolor</a></span>(<span class="dv">0</span>, <span class="st">"../images/mandrill.jpg"</span>, <span class="st">"../images/mandrill_reducolor0.jpg"</span>)</a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="kw">imageShow</span>(mandrill_reducolor0)</a></code></pre></div>
+<p><img src="rimager-vignette_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co">#style 1, reduce the image color to 8 colors. And because the output_path is NULL, the image will</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="co">#not be saved as a file.</span></a>
+<a class="sourceLine" id="cb6-3" title="3">mandrill_reducolor1 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/reducolor.html">reducolor</a></span>(<span class="dv">1</span>, <span class="dt">input_path =</span> <span class="st">"../images/mandrill.jpg"</span>, <span class="dt">output_path =</span> <span class="ot">NULL</span>)</a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="kw">imageShow</span>(mandrill_reducolor1)</a></code></pre></div>
+<p><img src="rimager-vignette_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
 </div>
 </div>
   </div>
@@ -173,17 +215,17 @@
 <li><a href="#overview">Overview</a></li>
       <li>
 <a href="#functions">Functions</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#circropper"><code>circropper()</code></a></li>
-      <li><a href="#reducize"><code>reducize()</code></a></li>
-      <li><a href="#imgfilter"><code>imgfilter()</code></a></li>
+<li><a href="#circropperinput_path-margin"><code>circropper(input_path, margin)</code></a></li>
+      <li><a href="#reducizeinput_file-output_file-width-height"><code>reducize(input_file, output_file, width, height)</code></a></li>
+      <li><a href="#imgfilterinput_path-filter_type-strength-output_path-null"><code>imgfilter(input_path, filter_type, strength, output_path = NULL))</code></a></li>
       <li><a href="#reducolorstyle-input_path-output_path-null"><code>reducolor(style, input_path, output_path = NULL)</code></a></li>
       </ul>
 </li>
       <li>
 <a href="#examples">Examples</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#circropper-1"><code>circropper</code></a></li>
+<li><a href="#circropper"><code>circropper</code></a></li>
       <li><a href="#redusize"><code>redusize</code></a></li>
-      <li><a href="#imgfilter-1"><code>imgfilter</code></a></li>
+      <li><a href="#imgfilter"><code>imgfilter</code></a></li>
       <li><a href="#reducolor"><code>reducolor</code></a></li>
       </ul>
 </li>
