@@ -5,22 +5,22 @@
 \title{Reduces the dimension of a given image by removing vertical and
 horizontal seams}
 \usage{
-redusize(input_path, output_path, width, height)
+redusize(input_path, output_path, height, width)
 }
 \arguments{
 \item{input_path}{character, the path for the input file}
 
 \item{output_path}{character, the path for the output file}
 
-\item{width}{integer, the width of the reduced image}
+\item{height}{integer, the height of the reduced image}
 
-\item{height}{integer, the height of the reduce image}
+\item{width}{integer, the width of the reduce image}
 }
 \value{
 an array of image
 }
 \description{
-A new image with the modified width and height will be created
+A new image with the modified height and width will be created
 }
 \examples{
 input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
