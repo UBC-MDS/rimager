@@ -2,7 +2,8 @@
 % Please edit documentation in R/redusize.R
 \name{redusize}
 \alias{redusize}
-\title{A function to reduce the dimension of a give image by removing vertical and horizontal seams}
+\title{Reduces the dimension of a given image by removing vertical and
+horizontal seams}
 \usage{
 redusize(input_file, output_file, width, height)
 }

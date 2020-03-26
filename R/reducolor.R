@@ -17,7 +17,7 @@
 #' input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
 #' new <- reducolor(0, input_path, "new.jpg")
 #' OpenImageR::imageShow(new)
-reducolor <- function(style, input_path, output_path=NULL) {
+reducolor <- function(style, input_path, output_path = NULL) {
   img <- OpenImageR::readImage(input_path)
   height <- dim(img)[1]
   width <- dim(img)[2]
@@ -25,14 +25,17 @@ reducolor <- function(style, input_path, output_path=NULL) {
   green <- img[, , 2]
   blue <- img[, , 3]
 
-  if (style!=0 & style!=1) {stop("Input is invalid for the style argument. Please enter either 0 for black and white color, 1 for eight color scales")}
+  if (style != 0 & style != 1) {
+    stop("Input is invalid for the style argument.
+         Enter either 0 for black and white, or 1 for eight color scales.")
+  }
 
-  if (style==0) {
-    new_img <- array(dim=c(height, width, 3))
-    new_img[(red+green+blue)/3 < 0.5] <- 0
-    new_img[(red+green+blue)/3 >= 0.5] <- 1
-  } else if (style==1) {
-    new_img <- array(dim=c(height, width, 3))
+  if (style == 0) {
+    new_img <- array(dim = c(height, width, 3))
+    new_img[(red + green + blue) / 3 < 0.5] <- 0
+    new_img[(red + green + blue) / 3 >= 0.5] <- 1
+  } else if (style == 1) {
+    new_img <- array(dim = c(height, width, 3))
     new_img[, , 1][red < median(red)] <- min(red)
     new_img[, , 1][red >= median(red)] <- max(red)
     new_img[, , 2][green < median(green)] <- min(green)
@@ -46,5 +49,4 @@ reducolor <- function(style, input_path, output_path=NULL) {
     paste("New image saved in", output_path)
   }
   return(new_img)
-
 }

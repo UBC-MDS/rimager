@@ -12,13 +12,13 @@ test_that("yield error when margin value is out of scope", {
 })
 
 
-test_that("circropper produces an output image with the same height and width as the original image", {
+test_that("The output image and input image have the same height and width", {
   img <- image_read(input_path)
   height <- image_info(img)$height
   width <- image_info(img)$width
   cropped <- circropper(input_path, 0)
   cropped_height <- image_info(cropped)$height
-  cropped_width <-image_info(cropped)$width
+  cropped_width <- image_info(cropped)$width
   expect_identical(height, cropped_height)
   expect_identical(width, cropped_width)
 })
