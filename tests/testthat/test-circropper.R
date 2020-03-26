@@ -8,7 +8,7 @@ test_that("yield error when argument type is wrong", {
 })
 
 test_that("yield error when margin value is out of scope", {
-  expect_error(circropper("tests/milad.jpg", 10000))
+  expect_error(circropper(input_path, 10000))
 })
 
 
@@ -16,7 +16,7 @@ test_that("The output image and input image have the same height and width", {
   img <- image_read(input_path)
   height <- image_info(img)$height
   width <- image_info(img)$width
-  cropped <- circropper(input_path, 0)
+  cropped <- circropper(input_path, 0, "../mandrill_circropper.png")
   cropped_height <- image_info(cropped)$height
   cropped_width <- image_info(cropped)$width
   expect_identical(height, cropped_height)
