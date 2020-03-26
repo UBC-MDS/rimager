@@ -4,14 +4,14 @@
 \alias{reducolor}
 \title{Reduce image color to either 2 or 8 colors for cartoonized effect}
 \usage{
-reducolor(style, input_path, output_path = NULL)
+reducolor(input_path, style, output_path = NULL)
 }
 \arguments{
-\item{style}{integer either 0 or 1
-0 for white and black colors
-1 for 8 colors}
-
 \item{input_path}{character the image file path}
+
+\item{style}{string vector
+selected two colors from c("white", "black", "red", "green", "blue", "yellow", "pink", "aqua" )
+or "eight" for eight colors}
 
 \item{output_path}{character if not Null, the modified image will be saved
 in the provided folder path and name}
@@ -24,6 +24,6 @@ Reduce image color to either 2 or 8 colors for cartoonized effect
 }
 \examples{
 input_path <- system.file("tmp_image", "mandrill.jpg", package = "rimager")
-new <- reducolor(0, input_path, "new.jpg")
+new <- reducolor(input_path, c("black", "white"), "new.jpg")
 OpenImageR::imageShow(new)
 }
