@@ -23,7 +23,7 @@ library(rimager)
 
 # Overview
 
-[`rimager`](https://github.com/UBC-MDS/rimager) is a R package that provides a quick and easy way to do image processings and graphic editings. The package includes four functionalities: reduce the size of the image, crop the image into a circle, reduce the image colors, and blur or sharpen the image. 
+[`rimager`](https://github.com/UBC-MDS/rimager) is a R package that provides a quick and easy way to perform image processing and graphic editing. The package includes four functionalities: reduce the size of the image, crop the image into a circle, reduce the image colors, and blur or sharpen the image. 
 
 
 # Functions
@@ -38,7 +38,7 @@ Create a new image cropped by a circle mask and leave a margin
 `input_path`: character the image file path <br>
 `margin`: double the distance between circle boundary and the original image boundary
 
-## `reducize(input_file, output_file, width, height)`
+## `redusize(input_file, output_file, width, height)`
 
 #### Description:
 A new image with the modified width and height will be created
@@ -50,10 +50,10 @@ A new image with the modified width and height will be created
 `width`: integer, the width of the reduced image <br>
 `height`: integer, the height of the reduce image
 
-## `imgfilter(input_path, filter_type, strength, output_path = NULL))`
+## `imgfilter(input_path, filter_type, strength, output_path = NULL)`
 
 #### Description: 
-The filter types include 'blur' and 'sharpen'; where blur blends neighboring pixels and sharpen enhances edges. The strength of the filter indicates how much of effect is apllied to the image; where 0 is no effect and 1 is very strong effect.
+The filter types include 'blur' and 'sharpen'; where blur blends neighboring pixels and sharpen enhances edges. The strength of the filter indicates how much of effect is applied to the image; where 0 is no effect and 1 is very strong effect.
 
 #### Arguments:
 
