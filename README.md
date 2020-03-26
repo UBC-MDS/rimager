@@ -10,10 +10,22 @@ status](https://github.com/UBC-MDS/rimager/workflows/R-CMD-check/badge.svg)](htt
 [![codecov](https://codecov.io/gh/UBC-MDS/rimager/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rimager)
 <!-- badges: end -->
 
-The rimager package contains functions that aid in image manipulation
-and processing.
+## Overview
 
-This package was developed as a project for DSCI-524.
+Want to edit an image in the shell instead of GUI applications?
+`rimager` is a R package that provides a quick and easy way to do some
+simple image processing and graphic editing. Based on the main needs of
+graphic editing, the package integrates four functionalities. The
+functionalities include: reducing the size of an image, cropping an
+image into a circle, reducing the number of colours in an image, and
+applying cool filter effects. By inputting the path of the image, users
+can run any of these functions with one line of code to get the desired
+image. This package was developed as a course project for DSCI-524 at
+the University of British Columbia.
+
+To learn more about `rimager` and how to use it, please visit the
+[package
+website.](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html)
 
 ## Creators
 
@@ -28,29 +40,6 @@ To contribute to this project, you must adhere to the terms outlined in
 our [Code of
 Conduct.](https://github.com/UBC-MDS/rimager/blob/master/CONDUCT.md)
 
-## Overview:
-
-Want to edit an image in the shell instead of GUI applications?
-`rimager` is a R package that provides a quick and easy way to do some
-simple image processing and graphic editing. Based on the main needs of
-graphic editing, the package integrates four functionalities. The
-functionalities include: reducing the size of an image, cropping an
-image into a circle, reducing the number of colours in an image, and
-applying cool filter effects. By inputting the path of the image, users
-can run any of these functions with one line of code to get the desired
-image.
-
-## Our package in R ecosystem:
-
-There are existing packages to process images. For example
-`magick`[here](https://cran.r-project.org/web/packages/magick/vignettes/intro.html),
-`imager`[here](https://dahtah.github.io/imager/imager.html) are popular
-packages that can be used to resize, cut images and apply filters. The
-goal of this package is either to utilize the existing packages to
-improve the pre-existing functions or to re-implement code manually.
-Also it automates the image editing process, producing the altered image
-by one line of code.
-
 ## Installation
 
 You can install the development version from
@@ -60,6 +49,19 @@ You can install the development version from
 # install.packages("devtools")
 devtools::install_github("UBC-MDS/rimager")
 ```
+
+### Dependencies
+
+  - R 3.6.1 or greater
+      - magick
+      - plotrix
+      - jpeg
+      - OpenImageR
+
+<span style="color:red"> Note: Because some operating systems
+(Ubuntu-16.04 ‘3.2’, ‘3.3’ ‘3.4’ and macOs-devel) require older versions
+of packages (magick and plotrix) we used in development, we have
+excluded these OS in R-CMD-check.</span>
 
 ## Functions
 
@@ -76,28 +78,23 @@ devtools::install_github("UBC-MDS/rimager")
     cartoonized color effect. This can be either white and black images
     or eight colors images.
 
-## Dependencies:
-
-  - R 3.6.1 or greater
-      - magick
-      - plotrix
-      - jpeg
-      - OpenImageR
-
-<span style="color:red"> Note: Because some operating systems
-(Ubuntu-16.04 ‘3.2’, ‘3.3’ ‘3.4’ and macOs-devel) need older version of
-packages (magick and plotrix) we used in development, we exclude the
-these OS in R-CMD-check. We got permission on slack.</span>
-
-see: [chat on slack for
-permission](https://ubc-mds.slack.com/archives/C24GEK3PV/p1584161232445700?thread_ts=1584159682.445100&cid=C24GEK3PV)
-
-## Example
+## Usage Examples
 
 see
 [rimager-Vignette](https://ubc-mds.github.io/rimager/articles/rimager-vignette.html)
 
+## Our Package in the R Ecosystem
+
+There are existing packages to process images. For example, both
+[`magick`](https://cran.r-project.org/web/packages/magick/vignettes/intro.html)
+and [`imager`](https://dahtah.github.io/imager/imager.html) are popular
+packages that can be used to resize, cut images and apply filters. The
+goal of our package is to utilize these existing packages to improve the
+pre-existing functions or to re-implement the code manually.
+Additionally, it automates the image editing process, producing the
+altered image by one line of code.
+
 ## Package in python
 
-We have a package with the same functionalities in python: `pyimager`.
-See [here](https://github.com/UBC-MDS/pyimager)
+We have a package with the same functionalities in python:
+[`pyimager`](https://github.com/UBC-MDS/pyimager)
